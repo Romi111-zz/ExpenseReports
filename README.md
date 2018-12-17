@@ -4,7 +4,7 @@ The goal of this project is to learn Java, Maven, Spring and Hibernate while cre
 
 **Status of the project**
 
-Open, Back-end in progress. Front-end to be started.
+Open, with back-end in progress and front-end to be started.
 
 **Testing**
 

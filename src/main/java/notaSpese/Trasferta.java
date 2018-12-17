@@ -5,8 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.SecondaryTable;
 
@@ -61,10 +59,9 @@ public class Trasferta {
 		DataFine = dataFine;
 	}
 	
-	// Attraverso @Column indichiamo che getters e setters appartengono alla tabella Spese
+	// Attraverso @Column(table="Spese") indichiamo che getters e setters appartengono alla tabella Spese
 	
 	@Column(table="Spese")
-	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	public int getID_Spesa() {
 		return ID_Spesa;
@@ -72,8 +69,8 @@ public class Trasferta {
 	public void setID_Spesa(int iD_Spesa) {
 		ID_Spesa = iD_Spesa;
 	}
-	@JoinColumn(table="Spese")
-	@ManyToOne
+	
+	@Column(table="Spese")
 	public int getID_TrasfertaCollegata() {
 		return ID_TrasfertaCollegata;
 	}

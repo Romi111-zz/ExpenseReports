@@ -8,16 +8,29 @@ Open, with back-end in progress and front-end to be started.
 
 **Testing**
 
-Example of format to add data (POST):
+Create a new business trip in the database:
+
 
 ```
-$ curl 'localhost:8080/demo/add?Nome=Brasile&DataInizio=30/11/2018&DataFine=03/12/2018&DataSpesa=01/12/2018&Descrizione=Cena&Importo=100'
+$ curl 'localhost:8080/expensesmanagement/nuovatrasferta?Nome=Brasile&DataInizio=30/11/2018&DataFine=03/12/2018'
 ```
 
-To return all the data in the database (GETALL):
+Create a new expense linked to the business trip above:
 
 ```
-$ curl 'localhost:8080/demo/all'
+$ curl 'localhost:8080/expensesmanagement/nuovaspesa?ID_TrasfertaCollegata=1&DataSpesa='30/11/2018'&Descrizione='Cena'&Importo=100'
+```
+
+Get the list of all the business trips
+
+```
+$ curl 'localhost:8080/expensesmanagement/getlistatrasferte'
+```
+
+Get the list of all the expenses
+
+```
+$ curl 'localhost:8080/expensesmanagement/getlistaspese'
 ```
 
 **Start date**

@@ -1,5 +1,7 @@
 package notaSpese;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,12 +25,10 @@ public class Trasferta {
 	
 	// Campi della tabella Spese
 	
-	private int ID_Spesa;
 	private int ID_TrasfertaCollegata;
 	private String DataSpesa;
 	private String Descrizione;
 	private float Importo;
-	
 	
 	// Getters and Setters
 	
@@ -61,13 +61,14 @@ public class Trasferta {
 	
 	// Attraverso @Column(table="Spese") indichiamo che getters e setters appartengono alla tabella Spese
 	
+
+	
 	@Column(table="Spese")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	public int getID_Spesa() {
-		return ID_Spesa;
+	public String getDataSpesa() {
+		return DataSpesa;
 	}
-	public void setID_Spesa(int iD_Spesa) {
-		ID_Spesa = iD_Spesa;
+	public void setDataSpesa(String dataSpesa) {
+		DataSpesa = dataSpesa;
 	}
 	
 	@Column(table="Spese")
@@ -77,13 +78,7 @@ public class Trasferta {
 	public void setID_TrasfertaCollegata(int iD_TrasfertaCollegata) {
 		ID_TrasfertaCollegata = iD_TrasfertaCollegata;
 	}
-	@Column(table="Spese")
-	public String getDataSpesa() {
-		return DataSpesa;
-	}
-	public void setDataSpesa(String dataSpesa) {
-		DataSpesa = dataSpesa;
-	}
+	
 	@Column(table="Spese")
 	public String getDescrizione() {
 		return Descrizione;
